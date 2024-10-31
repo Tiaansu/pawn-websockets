@@ -1,4 +1,4 @@
-project(SAMP-WebSockets)
+project(pawn-websockets)
 set(CMAKE_BUILD_TYPE Release)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
