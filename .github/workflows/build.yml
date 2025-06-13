@@ -39,6 +39,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Create artifact directory
+        run: mkdir artifact
+
       - name: Build
         run: |
           cd docker
@@ -48,11 +51,10 @@ jobs:
 
       - name: Move file
         run: |
-          mkdir build/lib
-          cp docker/build/lib/libpawn-websockets.so build/lib/pawn-websockets.so
+          cp docker/build/lib/libpawn-websockets.so artifact/pawn-websockets.so
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: 'websockets-linux'
-          path: build/lib
+          path: artifact
